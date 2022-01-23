@@ -190,10 +190,10 @@ def run(weights=ROOT / 'yolov5s.pt',  # model.pt path(s)
             # Save results (image with detections)
             if save_img:
                 if dataset.mode == 'image':
-                    its_img=True
+                   
                     cv2.imwrite(save_path, im0)
                 else:  # 'video' or 'stream'
-                    its_img=False
+                    
                     if vid_path[i] != save_path:  # new video
                         vid_path[i] = save_path
                         if isinstance(vid_writer[i], cv2.VideoWriter):
@@ -213,8 +213,8 @@ def run(weights=ROOT / 'yolov5s.pt',  # model.pt path(s)
       
 
     t = tuple(x / seen * 1E3 for x in dt)  # speeds per image
-    if its_img=True:
-      LOGGER.info(f'Speed: %.1fms pre-process, %.1fms inference, %.1fms NMS per image at shape {(1, 3, *imgsz)}' % t)
+    
+    #LOGGER.info(f'Speed: %.1fms pre-process, %.1fms inference, %.1fms NMS per image at shape {(1, 3, *imgsz)}' % t)
     if save_txt or save_img:
         s = f"\n{len(list(save_dir.glob('labels/*.txt')))} labels saved to {save_dir / 'labels'}" if save_txt else ''
         LOGGER.info(f"Results saved to {colorstr('bold', save_dir)}{s}")
