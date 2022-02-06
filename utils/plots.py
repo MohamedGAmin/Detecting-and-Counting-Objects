@@ -112,7 +112,11 @@ class Annotator:
         cv2.putText(self.im, "{}s: {}".format(key, value), (5, offset),
                             cv2.FONT_HERSHEY_COMPLEX_SMALL, 2, (0, 255, 0), 2)
         offset += 70
-
+        
+    def fps_draw(self,fps):
+      cv2.putText(self.im, "FPS: {:.2F}".format(fps), (350, 40),
+                            cv2.FONT_HERSHEY_COMPLEX_SMALL, 2, (0, 255, 0), 2)
+      
     def rectangle(self, xy, fill=None, outline=None, width=1):
         # Add rectangle to image (PIL-only)
         self.draw.rectangle(xy, fill, outline, width)
