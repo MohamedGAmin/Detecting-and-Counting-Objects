@@ -180,7 +180,7 @@ def run(weights=ROOT / 'yolov5s.pt',  # model.pt path(s)
 
             annotator.draw_count(counts)
             # Print time (inference-only)
-            #LOGGER.info(f'{s}Done. ({t3 - t2:.3f}s)')
+            LOGGER.info(f'{s}Done. ({t3 - t2:.3f}s)')
             #show fps 
             diff=t3 - t2
             fps=1/diff
